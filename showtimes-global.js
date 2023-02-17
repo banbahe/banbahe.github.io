@@ -14,8 +14,8 @@
     const isLabsStagePre = conditions1.some(i => currentLocation.includes(i));
 
     let countryCode = 'MX';
-    let cinemaVistaId = params.get('cinemaVistaId');
-    let showtimeVistaId = params.get('showtimeVistaId');
+    let cinemaVistaId = params.get('cinemacode');
+    let showtimeVistaId = params.get('txtSessionId');
 
     if (isLabsLocal) {
         let search_countryCode_local = document.getElementById('tmp-country').value.split("'");

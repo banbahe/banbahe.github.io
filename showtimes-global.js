@@ -47,6 +47,6 @@
             showtimeVistaId = showtimeVistaId;
     }
 
-    let merge = `https://sls-pre-compra.cinepolis.com/?cinemaVistaId=${cinemaVistaId}&showtimeVistaId=${showtimeVistaId}&countryCode=${countryCode}`;
+    let merge = `https://sls-stage-compra.cinepolis.com/?cinemaVistaId=${cinemaVistaId}&showtimeVistaId=${showtimeVistaId}&countryCode=${countryCode}`;
     args.href = merge;
 }

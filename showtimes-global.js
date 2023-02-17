@@ -1,4 +1,4 @@
-﻿function ReplaceUri(args) {
+function ReplaceUri(args) {
     // BORRAR ARCHIVO
     // AGREGAR ESTE ARCHIVO EN S3 SOLO EN AMBIENTE STAGE / PREPROD
 
@@ -27,6 +27,24 @@
         const search_countryCode = currentLocation.split('.');
         countryCode = search_countryCode[3].toUpperCase();
     }
+
+    showtimeVistaId = parseInt(showtimeVistaId);
+
+    switch (showtimeVistaId) {
+        case 36838:
+            showtimeVistaId = 31858;
+            break;
+
+        case 31740:
+            showtimeVistaId = 35934;
+            break;
+
+        case 31762:
+            showtimeVistaId = 36817;
+            break;
+
+        default:
+            showtimeVistaId = showtimeVistaId;
 
     let merge = `https://sls-pre-compra.cinepolis.com/?cinemaVistaId=${cinemaVistaId}&showtimeVistaId=${showtimeVistaId}&countryCode=${countryCode}`;
     args.href = merge;

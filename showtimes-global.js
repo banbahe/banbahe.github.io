@@ -39,8 +39,8 @@
             showtimeVistaId = 31749;
             break;
 
-        case 31762:
-            showtimeVistaId = 36817;
+        case 36876:
+            showtimeVistaId = 31868;
             break;
 
         default:

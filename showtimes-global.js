@@ -31,12 +31,12 @@
     showtimeVistaId = parseInt(showtimeVistaId);
 
     switch (showtimeVistaId) {
-        case 36838:
-            showtimeVistaId = 31858;
+        case 36826:
+            showtimeVistaId = 31771;
             break;
 
-        case 31740:
-            showtimeVistaId = 35934;
+        case 36006:
+            showtimeVistaId = 31749;
             break;
 
         case 31762:

@@ -1,52 +1,56 @@
 ﻿function ReplaceUri(args) {
     // BORRAR ARCHIVO
     // AGREGAR ESTE ARCHIVO EN S3 SOLO EN AMBIENTE STAGE / PREPROD
-
     debugger;
+	
     const url = new URL(args.href);
     const params = new URLSearchParams(url.search);
     const currentLocation = window.location.hostname;
-
+	
     const conditions0 = ['localhost'];
-    const conditions1 = ['preprod', 'stage'];
+    const conditions1 = [ 'stage'];
+	const conditions2 = ['preprod'];
 
-    const isLabsLocal = conditions0.some(i => currentLocation.includes(i));
-    const isLabsStagePre = conditions1.some(i => currentLocation.includes(i));
+    const isLocal = conditions0.some(i => currentLocation.includes(i));
+    const isStage = conditions1.some(i => currentLocation.includes(i));
+	const isPreprod = conditions2.some(i => currentLocation.includes(i));
 
     let countryCode = 'MX';
+	let hostNamePuchase = 'https://sls-stage-compra.cinepolis.com/';
     let cinemaVistaId = params.get('cinemacode');
     let showtimeVistaId = params.get('txtSessionId');
-
-    if (isLabsLocal) {
-        let search_countryCode_local = document.getElementById('tmp-country').value.split("'");
-        let countryCode_local = search_countryCode_local[1];
-        countryCode = countryCode_local.slice(-2);
-    }
-
-    if (isLabsStagePre) {
-        const search_countryCode = currentLocation.split('.');
-        countryCode = search_countryCode[3].toUpperCase();
+	
+	let search_countryCode_local = document.getElementById('tmp-country').value.split("'");
+    let countryCode_local = search_countryCode_local[1];
+	try {
+		countryCode = countryCode_local.slice(-2);
+	} catch(err) {
+		countryCode = 'MX'
+	}
+    
+    if (isPreprod) {
+		hostNamePuchase = 'https://sls-preprod-compra.cinepolis.com/';
+		cinemaVistaId = params.get('cinemaVistaId');
+        showtimeVistaId = params.get('showtimeVistaId');
+        // const search_countryCode = currentLocation.split('.');
+        // countryCode = search_countryCode[3].toUpperCase();
     }
 
     showtimeVistaId = parseInt(showtimeVistaId);
 
     switch (showtimeVistaId) {
-        case 36826:
-            showtimeVistaId = 31771;
+        case 18090:
+            showtimeVistaId = 14977;
             break;
 
-        case 36006:
-            showtimeVistaId = 31749;
-            break;
-
-        case 36876:
-            showtimeVistaId = 31868;
+        case 18785:
+            showtimeVistaId = 15173;
             break;
 
         default:
             showtimeVistaId = showtimeVistaId;
     }
 
-    let merge = `https://sls-stage-compra.cinepolis.com/?cinemaVistaId=${cinemaVistaId}&showtimeVistaId=${showtimeVistaId}&countryCode=${countryCode}`;
+    let merge = `${hostNamePuchase}/?cinemaVistaId=${cinemaVistaId}&showtimeVistaId=${showtimeVistaId}&countryCode=${countryCode}`;
     args.href = merge;
 }

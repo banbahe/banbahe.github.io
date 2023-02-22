@@ -22,8 +22,13 @@
 	
 	let search_countryCode_local = document.getElementById('tmp-country').value.split("'");
     let countryCode_local = search_countryCode_local[1];
+	
 	try {
+		
 		countryCode = countryCode_local.slice(-2);
+		cinemaVistaId == null ? params.get('cinemaVistaId');
+		showtimeVistaId == null ? params.get('showtimeVistaId');
+		
 	} catch(err) {
 		countryCode = 'MX'
 	}

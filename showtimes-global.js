@@ -26,8 +26,8 @@ function ReplaceUri(args) {
     try {
 
         countryCode = countryCode_local.slice(-2);
-        cinemaVistaId == null ? params.get('cinemaVistaId') : cinemaVistaId;
-        showtimeVistaId == null ? params.get('showtimeVistaId') : showtimeVistaId;
+        cinemaVistaId = cinemaVistaId == undefined ? params.get('cinemaVistaId') : cinemaVistaId;
+        showtimeVistaId = showtimeVistaId == undefined ? params.get('showtimeVistaId') : showtimeVistaId;
 
     } catch (err) {
         countryCode = 'MX'

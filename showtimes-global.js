@@ -26,8 +26,8 @@ function ReplaceUri(args) {
     try {
 
         countryCode = countryCode_local.slice(-2);
-        cinemaVistaId = cinemaVistaId == undefined ? params.get('cinemaVistaId') : cinemaVistaId;
-        showtimeVistaId = showtimeVistaId == undefined ? params.get('showtimeVistaId') : showtimeVistaId;
+        cinemaVistaId == null ? params.get('cinemaVistaId') : cinemaVistaId;
+        showtimeVistaId == null ? params.get('showtimeVistaId') : showtimeVistaId;
 
     } catch (err) {
         countryCode = 'MX'
@@ -44,14 +44,22 @@ function ReplaceUri(args) {
     showtimeVistaId = parseInt(showtimeVistaId);
 
     switch (showtimeVistaId) {
-        case 18090:
-            showtimeVistaId = 14977;
+        case 19015:
+            showtimeVistaId = 15119;
             break;
 
-        case 18785:
-            showtimeVistaId = 15173;
+        case 19004:
+            showtimeVistaId = 15034;
             break;
-
+        
+		case 19352:
+            showtimeVistaId = 15398;
+            break;	
+			
+        case 19349:
+            showtimeVistaId = 15370;
+            break;
+			
         default:
             showtimeVistaId = showtimeVistaId;
     }

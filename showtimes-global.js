@@ -34,7 +34,7 @@ function ReplaceUri(args) {
     }
 
     if (isPreprod) {
-        hostNamePuchase = 'https://sls-preprod-compra.cinepolis.com/';
+        hostNamePuchase = countryCode == 'PE': 'https://compra.cinepolis.com/ ? 'https://sls-preprod-compra.cinepolis.com/';
         cinemaVistaId = params.get('cinemaVistaId');
         showtimeVistaId = params.get('showtimeVistaId');
         // const search_countryCode = currentLocation.split('.');

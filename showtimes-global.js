@@ -28,7 +28,10 @@ function ReplaceUri(args) {
         countryCode = countryCode_local.slice(-2);
         cinemaVistaId = cinemaVistaId == null ? params.get('cinemaVistaId') : cinemaVistaId;
         showtimeVistaId = showtimeVistaId == null ? params.get('showtimeVistaId') : showtimeVistaId;
-		hostNamePuchase = countryCode == 'PE': 'https://compra.cinepolis.com/' ? hostNamePuchase;
+        
+        if(countryCode == 'PE') {
+          hostNamePuchase = 'https://compra.cinepolis.com/';
+        }
 
     } catch (err) {
         countryCode = 'MX'

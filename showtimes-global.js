@@ -28,13 +28,14 @@ function ReplaceUri(args) {
         countryCode = countryCode_local.slice(-2);
         cinemaVistaId = cinemaVistaId == null ? params.get('cinemaVistaId') : cinemaVistaId;
         showtimeVistaId = showtimeVistaId == null ? params.get('showtimeVistaId') : showtimeVistaId;
+		hostNamePuchase = countryCode == 'PE': 'https://compra.cinepolis.com/' ? hostNamePuchase;
 
     } catch (err) {
         countryCode = 'MX'
     }
 
     if (isPreprod) {
-        hostNamePuchase = countryCode == 'PE': 'https://compra.cinepolis.com/ ? 'https://sls-preprod-compra.cinepolis.com/';
+        hostNamePuchase = 'https://sls-preprod-compra.cinepolis.com/';
         cinemaVistaId = params.get('cinemaVistaId');
         showtimeVistaId = params.get('showtimeVistaId');
         // const search_countryCode = currentLocation.split('.');

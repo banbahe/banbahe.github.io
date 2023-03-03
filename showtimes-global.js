@@ -48,20 +48,28 @@ function ReplaceUri(args) {
     showtimeVistaId = parseInt(showtimeVistaId);
 
     switch (showtimeVistaId) {
-        case 18948:
-            showtimeVistaId = 15196;
+        case 19136:
+            showtimeVistaId = 15404;
             break;
 
-        case 18954:
-            showtimeVistaId = 15248;
+        case 19141:
+            showtimeVistaId = 15458;
             break;
         
-        case 19481:
-            showtimeVistaId = 15410;
+        case 6218:
+            showtimeVistaId = 5195;
             break;	
 			
-        case 19477:
-            showtimeVistaId = 15387;
+        case 6217:
+            showtimeVistaId = 5225;
+            break;
+
+        case 110905:
+            showtimeVistaId = 110493;
+            break;
+
+        case 38345:
+            showtimeVistaId = 35633;
             break;
 			
         default:
